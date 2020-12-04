@@ -24,7 +24,7 @@ public class Settings {
     private void initializePropFile() throws IOException {
         URL url = Thread.currentThread().getContextClassLoader().getResource("settings.properties");
         this.properties = new Properties();
-        properties.load(new FileInputStream(url.getPath()));
+        properties.load(new FileInputStream( new File(url.getPath())));
     }
 
     public String getDriverPath(){
