@@ -26,7 +26,7 @@ public class ContactUsSteps {
     @And("user enter random details for following fields")
     public void fillContactUsDetails(List<String> fieldNames) {
         contactPg.contactWithRandomValues(fieldNames);
-        
+
         // temp step to check if values are selected correctly
         try {
             Thread.sleep(500);
