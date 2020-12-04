@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Properties;
 
@@ -21,16 +22,15 @@ public class Settings {
     private Properties properties;
 
     @PostConstruct
-    private void initializePropFile() throws IOException {
-        URL url = Thread.currentThread().getContextClassLoader().getResource("settings.properties");
+    private void initializePropFile() throws IOException, URISyntaxException {
+
         this.properties = new Properties();
-        properties.load(new FileInputStream( new File(url.getPath())));
+        properties.load(new FileInputStream( new File("src/test/resources/settings.properties")));
     }
 
     public String getDriverPath(){
 
-        return  Thread.currentThread().getContextClassLoader().
-                getResource(properties.getProperty("webdriver.path")).getPath();
+        return  new File(properties.getProperty("webdriver.path")).getPath();
     }
 
     public String getBrowserType() {
