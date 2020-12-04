@@ -12,7 +12,7 @@
     <br/>
 
 ## Reports
- - Html reports are generated at path <br/>
+ - Html reports are generated at path 
 
  ```
     target/cucumber-html-reports/feature-overview.html
