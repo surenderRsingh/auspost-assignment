@@ -1,5 +1,5 @@
 # Pre requisite
- - JDK Version > 11
+ - JDK Version >= 11
  - Chrome version 86
 
  ## Initial set up
